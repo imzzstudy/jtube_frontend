@@ -8,6 +8,7 @@ const preview = {
         date: /Date$/,
       },
     },
+    zeplinLink: "zpl://project?pid=642ffe84de276b6d04409927"
   },
 };
 

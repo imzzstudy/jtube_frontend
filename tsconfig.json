@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      "target": "es6", //어떤버전의 js로 컴파일할지 정의
+      "lib": [ //어떤 환경에서 사용하는지 정의(api자동완성 제공해줌)
+        "dom", //브라우저
+        "dom.iterable",
+        "esnext"
+      ],
+      "baseUrl": "./src", // 추가된 것 ./src를 절대 경로로 지정
+      "allowJs": true, //ts안에서 js허용(js파일 import가능)
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "jsx": "react-jsx"
+    },
+    "include": [ //컴파일할 폴더 입력. src의 모든파일 확인함
+      "src"
+    ],
+    "exclude": [
+      "node_modules"   
+    ],
+  }
+  //출처: https://velog.io/@xmun74/TS-%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0 
