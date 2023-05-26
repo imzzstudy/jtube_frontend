@@ -1,6 +1,7 @@
 // import Expenses from './components/Expenses/Expenses';
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import VIcon from "components/atoms/Icon/Icon";
 
 const App: React.FC = () => {
   // const expenses = [
@@ -27,8 +28,9 @@ const App: React.FC = () => {
   return (
     <div>
       <h2>Hi typescript!</h2>
+      <VIcon></VIcon>
     </div>
-  )
+  );
   // return (
   //   <div>
   //     <h2>Let's get started!</h2>
@@ -36,6 +38,6 @@ const App: React.FC = () => {
   //     <Expenses expenses={expenses}></Expenses>
   //   </div>
   // );
-}
+};
 
 export default App;

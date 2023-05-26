@@ -22,28 +22,33 @@
 // .storybook/main.ts
 
 // Replace your-framework with the framework you are using (e.g., react-webpack5, vue3-webpack5)
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/components/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/preset-create-react-app",
     "@storybook/addon-interactions",
-    "storybook-zeplin/register"
+    "storybook-zeplin/register",
   ],
   typescript: {
     check: false,
     checkOptions: {},
-    reactDocgen: 'react-docgen-typescript',
+    reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+      propFilter: (prop) =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
   framework: {
-    name: '@storybook/react-webpack5',
+    name: "@storybook/react-webpack5",
     options: {},
   },
   core: {
@@ -52,7 +57,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  staticDirs: ['../public'],
+  staticDirs: ["../public"],
   // refs: {
   //   'design-system': {
   //     title: 'Storybook Design System',

@@ -1,4 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
+
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -8,7 +9,7 @@ const preview = {
         date: /Date$/,
       },
     },
-    zeplinLink: "zpl://project?pid=642ffe84de276b6d04409927"
+    zeplinLink: "zpl://project?pid=642ffe84de276b6d04409927",
   },
 };
 
