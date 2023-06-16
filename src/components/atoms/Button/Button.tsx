@@ -5,19 +5,19 @@ import { classJoin } from "../../../utils/common";
 import classes from './Button.module.css';
 
 interface ButtonProps {
-    children?: React.ReactNode;
+    children?:  React.ReactNode;
     primary?: boolean;
     background?: string;
     size?: 'small' | 'medium' | 'large';
     onClick?:() => void;
 }
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
     primary = false,
     size = 'medium',
     background,
     ...props
-}: ButtonProps) => {
+}) => {
     const buttonMode = primary ? classes.button_primary : classes.button_secondary;
     const buttonSize = size === 'large' ? classes.button_large : size==='small' ? classes.button_small : classes.button_medium;
 
