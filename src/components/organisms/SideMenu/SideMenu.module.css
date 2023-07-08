@@ -11,10 +11,13 @@
 }
 
 .sidemenu_wrap .subscription{
+    list-style: none;
+    margin:0;
+    padding:0 0 10px 0;
     border-bottom: 0;
 }
 
-.sidemenu_wrap .subscription li{
+.sidemenu_wrap ul li{
     display: flex;
     align-items: center;
     padding:10px 10px;

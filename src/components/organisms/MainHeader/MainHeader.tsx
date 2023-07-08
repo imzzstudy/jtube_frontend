@@ -12,7 +12,7 @@ const MainHeader = () => {
       <div className={classes.start}>
         <IconButton icon="menu" />
         <div style={{ padding: "12px" }}>
-          <Image src={img} />
+          <Image src={img} width={"127px"} height={"40px"}/>
         </div>
       </div>
       <div className={classes.center}>
