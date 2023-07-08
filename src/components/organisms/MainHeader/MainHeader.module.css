@@ -1,0 +1,25 @@
+.header_wrap{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    padding:8px 24px;
+}
+
+.header_wrap .start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_wrap .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_wrap .center input{
+    width: 500px;
+}
+.header_wrap .end{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

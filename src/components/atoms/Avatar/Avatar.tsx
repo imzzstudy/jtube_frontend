@@ -7,15 +7,16 @@ import classes from './Avatar.module.css';
 
 interface AvatarProps {
     children?: React.ReactNode;
-    src: string;
+    src?: string;
     alt?: string;
+    size?: string;
 }
 
 const Avatar = ({
     ...props
 }: AvatarProps) => {
     return (
-        <div className={classes.avatar}>
+        <div className={classes.avatar} style={{width: props.size ? props.size : "16px", height: props.size ? props.size : "16px"}}>
             {
                 props.src ? 
                     <img 

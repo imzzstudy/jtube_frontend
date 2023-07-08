@@ -1,0 +1,34 @@
+.sidemenu_wrap{
+    width:20%;
+    padding:10px;
+}
+
+.sidemenu_wrap .sidemenu_lists{
+    list-style: none;
+    margin:0;
+    padding:0 0 10px 0;
+    border-bottom:1px solid #cccccc;
+}
+
+.sidemenu_wrap .subscription{
+    border-bottom: 0;
+}
+
+.sidemenu_wrap .subscription li{
+    display: flex;
+    align-items: center;
+    padding:10px 10px;
+    border-radius: 10px;
+}
+
+.sidemenu_wrap ul li:hover{
+    background-color: rgba(1,1,1,0.1);
+}
+
+.sidemenu_wrap ul li span{
+    
+}
+
+.sidemenu_wrap ul li .text{
+    margin-left: 20px;
+}
