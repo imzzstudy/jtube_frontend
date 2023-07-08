@@ -6,7 +6,7 @@ interface Props {
   height: string;
 }
 
-function Video({ src, width = "320px", height = "300px" }: Props) {
+function Video({ src = "", width = "320px", height = "300px" }: Props) {
   const videoSrc = src || "";
   return (
     <video width={width} height={height} autoPlay muted controls>

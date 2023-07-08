@@ -5,10 +5,19 @@ interface Props {
   alt?: string;
   width?: string;
   height?: string;
+  className?: string;
 }
 
-function Image({ src, alt, width, height }: Props) {
-  return <img src={src} alt={alt} width={width} height={height} />;
+function Image({ src, alt, className, width, height }: Props) {
+  return (
+    <img
+      className={className}
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+    />
+  );
 }
 
 export default Image;

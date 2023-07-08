@@ -1,0 +1,52 @@
+/* Input form Style */
+input {
+  width: 100%;
+}
+input[type="text"],
+input[type="password"] {
+  margin: 5px 0;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  height: 34px;
+  color: #000000;
+  font-size: 12px;
+  padding-left: 10px;
+  box-shadow: none;
+}
+input:valid {
+  padding-top: 9px;
+  height: 26px;
+}
+/* Label style after Input feild is in focus. Can also use input:focus ~ label to select sibling. */
+
+input:valid + label {
+  font-size: 10px;
+  color: #cccccc;
+  top: 9px;
+  left: 7px;
+  padding: 0px 5px 0px 5px;
+}
+
+.input_wrap {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.input_wrap label {
+  font-family: arial;
+  font-size: 12px;
+  color: #888888;
+  padding: 13px;
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
