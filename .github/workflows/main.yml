@@ -4,8 +4,10 @@ on:
   push:
     branches: [ master, develop ] # push할 때 동작할 branch를 입력해주세요.
 env:
-  DOCKER_IMAGE: ghcr.io/imzzstudy/jtube_frontend # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
+  DOCKER_IMAGE: ${{ vars.DOCKER_IMAGE }} # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
+  DOCKER_IMAGE_NAME: ${{ vars.DOCKER_IMAGE_NAME }}
   VERSION: ${{ github.sha }}
+  CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}
 
 jobs:
   build:
@@ -51,5 +53,5 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       - name: Docker run
         run: |
-          docker ps -q --filter "name={your image name}" | grep -q . && docker stop {your image name} && docker rm -fv {your image name}
-          docker run -d -p 8080:8080 --name cicd --restart always ${{ env.DOCKER_IMAGE }}:${{ env.VERSION }}
+          docker ps -q --filter "name=${{ env.CONTAINER_NAME }}" | grep -q . && docker stop ${{ env.CONTAINER_NAME }} && docker rm -fv ${{ env.CONTAINER_NAME }} && docker rmi $(docker images --format "{{.ID}} {{.Repository}}" | grep "${{ env.DOCKER_IMAGE_NAME }}" | awk '{print $1}')
+          docker run -d -p 80:80 --name ${{ env.CONTAINER_NAME }} --restart always ${{ env.DOCKER_IMAGE }}:${{ env.VERSION }}
