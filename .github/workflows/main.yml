@@ -2,7 +2,7 @@ name: CI/CD Docker
 
 on:
   push:
-    branches: [ master, develop ] # push할 때 동작할 branch를 입력해주세요.
+    branches: [ main, develop ] # push할 때 동작할 branch를 입력해주세요.
 env:
   DOCKER_IMAGE: ${{ vars.DOCKER_IMAGE }} # 예를 들면, ghcr.io/dolphago/github-follow-unfollow
   DOCKER_IMAGE_NAME: ${{ vars.DOCKER_IMAGE_NAME }}
