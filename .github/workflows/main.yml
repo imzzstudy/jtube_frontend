@@ -53,4 +53,5 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       - name: Docker run
         run: |
+          docker ps -q --filter "name=${{ env.CONTAINER_NAME }}" | grep -q . && docker stop ${{ env.CONTAINER_NAME }} && docker rm -fv ${{ env.CONTAINER_NAME }} && docker rmi $(docker images --format "{{.ID}} {{.Repository}}" | grep "${{ env.DOCKER_IMAGE_NAME }}" | awk '{print $1}')
           docker run -d -p 80:80 --name ${{ env.CONTAINER_NAME }} --restart always ${{ env.DOCKER_IMAGE }}:${{ env.VERSION }}
