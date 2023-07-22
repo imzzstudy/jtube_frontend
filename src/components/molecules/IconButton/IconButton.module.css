@@ -1,0 +1,21 @@
+.icon_button_wrap{
+
+}
+
+.icon_button{
+    background: none;
+    border: 0;
+    border-radius: 50% ;
+    padding: 16px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* Size */
+    height: 1rem;
+    width: 1rem;
+}
+
+.icon_button:hover{
+    background: rgba(0, 0, 0, 0.1);
+}
