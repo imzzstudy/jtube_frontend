@@ -1,0 +1,22 @@
+.list_wrap{
+    display: flex;
+    align-items: center;
+    padding:10px 10px;
+    border-radius: 10px;
+}
+
+.title_wrap{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.title_wrap .title{
+    color:#000000;
+    margin: 0;
+}
+
+.title_wrap .subtitle{
+    color:#cccccc;
+    font-size: 0.8rem;
+}
