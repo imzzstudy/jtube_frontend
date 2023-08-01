@@ -6,11 +6,16 @@ import img from "../../../images/logo.png";
 
 import classes from "./MainHeader.module.css";
 
-const MainHeader = () => {
+interface MainHeaderProps{
+  children?:React.ReactNode
+  onToggle?:()=>void
+}
+
+const MainHeader = ({...props}:MainHeaderProps) => {
   return (
     <div className={classes.header_wrap}>
       <div className={classes.start}>
-        <IconButton icon="menu" />
+        <IconButton icon="menu" onClick={props.onToggle}/>
         <div style={{ padding: "12px" }}>
           <Image src={img} width={"127px"} height={"40px"}/>
         </div>

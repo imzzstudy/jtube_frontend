@@ -4,14 +4,26 @@ import MainHeader from "components/organisms/MainHeader/MainHeader";
 import SideMenu from "components/organisms/SideMenu/SideMenu";
 
 import classes from "./RootLayout.module.css";
+import { useState } from "react";
 
 const RootLayout = () => {
+    const [isOpen, setIsOpen] = useState(true);
+
+    const sideMenuToggleHandler = () => {
+        setIsOpen((prev) => (!prev))
+    }
+
+
     return (
         <>
             {/* <MainNavigation/> */} 
-            <MainHeader/>
+            <MainHeader
+                onToggle={sideMenuToggleHandler}
+            />
             <div className={classes.main_wrap}>
-                <SideMenu/>
+                <SideMenu 
+                    style={{"display":isOpen ? "block" : "none"}}
+                />
                 <main className={classes.main_contents}>
                     {/* {navigation.state === 'loading' && <p>Loading...</p>} */}
                     <Outlet/>

@@ -1,8 +1,21 @@
 .sidemenu_wrap{
-    width:20%;
+    min-width:220px;
     padding:10px;
 }
 
+.sidemenu_list{
+    display: flex;
+    align-items: center;
+    padding:10px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.sidemenu_list:hover{
+    background-color: rgba(1,1,1,0.1);
+}
+
+/* 
 .sidemenu_wrap .sidemenu_lists{
     list-style: none;
     margin:0;
@@ -34,4 +47,4 @@
 
 .sidemenu_wrap ul li .text{
     margin-left: 20px;
-}
+} */

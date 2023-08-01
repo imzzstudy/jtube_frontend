@@ -1,42 +1,58 @@
-import Avatar from "components/atoms/Avatar/Avatar";
-import Icon from "components/atoms/Icon/Icon";
+// import Avatar from "components/atoms/Avatar/Avatar";
+// import Icon from "components/atoms/Icon/Icon";
 
+import { Link } from "react-router-dom";
+import { SubscriptionLists } from "../SubscriptionLists/SubscriptionLists";
 import classes from "./SideMenu.module.css";
+import { Lists, List } from "components/molecules/Lists";
 
-const SideMenu = () => {
+interface SideMenuProps {
+    children?:React.ReactNode
+    style?:Object
+}
+
+
+const SideMenu = ({...props}:SideMenuProps) => {
+    const onClickHandler = () => {
+        console.log(123)
+    }
     return (
-        <div className={classes.sidemenu_wrap}>
-            <ul className={classes.sidemenu_lists}>
-                <li>
-                    <Icon>home</Icon>
-                    <span className={classes.text}>홈</span>
-                </li>
-                <li>
-                    <Icon>home</Icon>
-                    <span className={classes.text}>홈</span>
-                </li>
-                <li>
-                    <Icon>home</Icon>
-                    <span className={classes.text}>홈</span>
-                </li>
-            </ul>
-            <ul className={classes.subscription}>
-                <div style={{"paddingLeft":"10px"}}>
-                    <h3>구독</h3>
-                </div>
-                <li>
-                    <Avatar size="32px"/>
-                    <span className={classes.text}>홈</span>
-                </li>
-                <li>
-                    <Avatar size="32px"/>
-                    <span className={classes.text}>홈</span>
-                </li>
-                <li>
-                    <Avatar size="32px"/>
-                    <span className={classes.text}>홈</span>
-                </li>
-            </ul>
+        <div 
+            style={props.style}
+            className={classes.sidemenu_wrap}
+        >
+            <Lists>
+                <Link
+                    to="/"
+                    style={{
+                        textDecoration:"none",
+                        color:"black"
+                    }}
+                >
+                    <List
+                        icon="home"
+                        className={classes.sidemenu_list}
+                        onClick={onClickHandler}
+                    >
+                        홈
+                    </List>
+                </Link>
+                <Link
+                    to="/subscriptions"
+                    style={{
+                        textDecoration:"none",
+                        color:"black"
+                    }}
+                >
+                    <List
+                        icon="subscriptions"
+                        className={classes.sidemenu_list}
+                    >
+                        구독
+                    </List>
+                </Link>
+            </Lists>
+            <SubscriptionLists/>
         </div>
     )
 }
