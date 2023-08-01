@@ -6,6 +6,7 @@ import Button from "components/atoms/Button/Button";
 import { Login } from "pages/Login/Login";
 
 import VideoDetail from "pages/VideoDetail/VideoDetail";
+import { ChannelDetail } from "pages/ChannelDetail/ChannelDetail";
 
 const routes: RouteObject[] = [
   {
@@ -23,12 +24,19 @@ const routes: RouteObject[] = [
       },
       { path: "/login", element: <Login /> },
       {
-        path: "videos",
+        path: "/videos",
         // id:'video-detail',
         element: <VideoDetail />,
       },
+      {
+        path: "/channels",
+        element: <ChannelDetail/>,
+      }
     ],
   },
+  {
+    
+  }
 ];
 
 const router = createBrowserRouter(routes);
