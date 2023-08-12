@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./index.module.css";
 
 interface InputProps {
   children?: React.ReactNode;
+  id: string;
   type?: string;
   text?: string;
   name?: string;
   value?: string;
   sx?: object;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (newValue: string) => void;
 }
 
 const TextField = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ type = "text", ...props }: InputProps, ref) => {
-    const [enteredInput, setEnteredInput] = useState("");
+  ({ id, type = "text", value = "", ...props }: InputProps, ref) => {
     const InputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setEnteredInput(e.target.value);
-      props.onChange && props.onChange(e);
+      const newValue = e.target.value;
+
+      props.onChange && props.onChange(newValue);
     };
 
     return (
@@ -24,9 +25,10 @@ const TextField = React.forwardRef<HTMLInputElement, InputProps>(
         <div className={classes.input_wrap}>
           <input
             ref={ref}
+            id={id}
             type={type}
             required
-            value={enteredInput}
+            value={value}
             onChange={InputChangeHandler}
             name={props.name}
           />

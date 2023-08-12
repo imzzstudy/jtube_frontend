@@ -47,6 +47,10 @@ input:valid + label {
   pointer-events: none;
 }
 
+.input_wrap input {
+  width: 100%;
+}
+
 input[type="text"]:focus {
   outline: none;
 }

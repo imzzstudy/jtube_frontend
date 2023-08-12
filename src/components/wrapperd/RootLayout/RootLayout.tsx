@@ -7,31 +7,25 @@ import classes from "./RootLayout.module.css";
 import { useState } from "react";
 
 const RootLayout = () => {
-    const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
 
-    const sideMenuToggleHandler = () => {
-        setIsOpen((prev) => (!prev))
-    }
+  const sideMenuToggleHandler = () => {
+    setIsOpen((prev) => !prev);
+  };
 
-
-    return (
-        <>
-            {/* <MainNavigation/> */} 
-            <MainHeader
-                onToggle={sideMenuToggleHandler}
-            />
-            <div className={classes.main_wrap}>
-                <SideMenu 
-                    style={{"display":isOpen ? "block" : "none"}}
-                />
-                <main className={classes.main_contents}>
-                    {/* {navigation.state === 'loading' && <p>Loading...</p>} */}
-                    <Outlet/>
-                </main>
-            </div>
-        </>
-        
-    )
+  return (
+    <>
+      {/* <MainNavigation/> */}
+      <MainHeader onToggle={sideMenuToggleHandler} />
+      <div className={classes.main_wrap}>
+        <SideMenu style={{ display: isOpen ? "block" : "none" }} />
+        <main className={classes.main_contents}>
+          {/* {navigation.state === 'loading' && <p>Loading...</p>} */}
+          <Outlet />
+        </main>
+      </div>
+    </>
+  );
 };
 
 export default RootLayout;

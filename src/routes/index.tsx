@@ -3,10 +3,11 @@ import RootLayout from "components/wrapperd/RootLayout/RootLayout";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
 import Card from "components/atoms/Card/Card";
 import Button from "components/atoms/Button/Button";
-import { Login } from "pages/Login/Login";
-
 import VideoDetail from "pages/VideoDetail/VideoDetail";
 import { ChannelDetail } from "pages/ChannelDetail/ChannelDetail";
+import Authentication, {
+  action as authAction,
+} from "pages/Authentication/Authentication";
 
 const routes: RouteObject[] = [
   {
@@ -22,7 +23,7 @@ const routes: RouteObject[] = [
           </Card>
         ),
       },
-      { path: "/login", element: <Login /> },
+
       {
         path: "/videos",
         // id:'video-detail',
@@ -30,13 +31,16 @@ const routes: RouteObject[] = [
       },
       {
         path: "/channels",
-        element: <ChannelDetail/>,
-      }
+        element: <ChannelDetail />,
+      },
     ],
   },
+
   {
-    
-  }
+    path: "auth",
+    element: <Authentication />,
+    action: authAction,
+  },
 ];
 
 const router = createBrowserRouter(routes);
