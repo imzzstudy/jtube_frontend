@@ -1,0 +1,20 @@
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+}
+.headerMessage {
+  display: flex;
+  justify-content: center;
+}
+.headerMessage a {
+  margin-left: 4px;
+  color: #4dd6d3;
+  text-decoration-line: none;
+}
+.logo {
+  width: 155px;
+  height: 55px;
+  margin-top: 108px;
+}

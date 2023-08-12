@@ -6,9 +6,9 @@ export default {
 };
 
 export const Default: React.FC = () => (
-  <TextField name="man" value="man"></TextField>
+  <TextField id="man" name="man" value="man"></TextField>
 );
 
 export const Secondary: React.FC = () => (
-  <TextField name="woman" value="woman"></TextField>
+  <TextField id="woman" name="woman" value="woman"></TextField>
 );
